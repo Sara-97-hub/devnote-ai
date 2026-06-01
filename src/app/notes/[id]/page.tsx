@@ -43,6 +43,18 @@ export default async function NotePage({ params }: Props) {
         </span>
       ))}
     </div>
+
+
+<div className="space-y-1 text-sm text-zinc-500">
+  <p>
+  Created: {new Date(note.created_at).toLocaleDateString()}
+</p>
+
+<p>
+  Updated: {new Date(note.updated_at).toLocaleDateString()}
+</p>
+</div>
+
   </div>
 );
 }
