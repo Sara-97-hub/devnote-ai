@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { MOCK_NOTES } from "@/lib/data";
 
 type Props = {
@@ -12,6 +13,9 @@ export default async function NotePage({ params }: Props) {
   const note = MOCK_NOTES.find(
     (note) => note.id === id
   );
+  if (!note) {
+  notFound();
+}
 
  return (
   <div className="p-6 text-white space-y-4">
@@ -41,5 +45,5 @@ export default async function NotePage({ params }: Props) {
     </div>
   </div>
 );
-  
 }
+  
