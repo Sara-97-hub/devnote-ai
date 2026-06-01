@@ -7,6 +7,15 @@ import { MOCK_NOTES } from "@/lib/data";
 export default function NotesPage() {
   const [activeNoteId, setActiveNoteId] = useState<string | null>(null);
 
+  if (MOCK_NOTES.length === 0) {
+    return (
+      <div className="p-8 text-white">
+        <h1 className="text-2xl font-bold">All notes</h1>
+        <p className="mt-6 text-zinc-400">No notes yet.</p>
+      </div>
+    )
+  }
+
   return (
     <div className="p-8 text-white">
 
